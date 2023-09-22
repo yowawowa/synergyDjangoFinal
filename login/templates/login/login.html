@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login :: {{ block.super }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="bg-overlay">
+    <div class="container auth-container">
+        <h1 class="auth-title">Login</h1>
+        <form method="post" class="reglog">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary btn-block auth-btn">Login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+{% block footer %}
+{% endblock %}

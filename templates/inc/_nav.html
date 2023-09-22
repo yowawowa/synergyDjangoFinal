@@ -1,0 +1,20 @@
+<div class="site-top">
+    <div class="site-header clearfix">
+        <div class="container">
+            <a href="/" class="site-brand pull-left"><strong>Vidya</strong> i've stolen all of them! {% if request.user.is_authenticated and request.user.is_active %}For you,
+                {{ user.username }}!{% endif %}</a>
+
+            <div class="social-icons pull-right">
+                <ul>
+                    {% if request.user.is_authenticated and request.user.is_active %}
+                    <li title="Admin"><a href="http://127.0.0.1:8000/admin" class="fa fa-lock"></a></li>
+                    {% endif %}
+                    <li title="Registration"><a href="{% url 'Register' %}" class="fa fa-user"></a></li>
+                    <li title="Login"><a href="{% url 'Login' %}" class="fa fa-arrow-right"></a></li>
+                    <li title="Logout"><a href="{% url 'Logout' %}" class="fa fa-eye-slash"></a></li>
+                    <li title="Github"><a href="https://github.com/yowawowa/snrgFinal" class="fa fa-github"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
